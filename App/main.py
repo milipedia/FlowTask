@@ -14,6 +14,7 @@ def adicionar_tarefa():
     tarefas.append(tarefa)
     print(f'Tarefa "{titulo}" adicionada com sucesso!')
 
+# Função para listar todas as tarefas
 def listar_tarefas():
     if not tarefas:
         print('Nenhuma tarefa cadastrada.')
@@ -22,6 +23,22 @@ def listar_tarefas():
         for i, tarefa in enumerate(tarefas, start=1):
             status = 'Concluída' if tarefa['concluida'] else 'Pendente'
             print(f'{i}. {tarefa["titulo"]} - Status: {status}')
+
+# Função para mostrar os detalhes de uma tarefa específica
+def buscar_tarefa():
+    termo = input('Digite o termo de busca: ').lower()
+    resultados = []
+    for tarefa in tarefas:
+        if termo in tarefa['titulo'].lower() or termo in tarefa['descricao'].lower():
+            resultados.append(tarefa)
+    if not resultados:      
+        print('Nenhuma tarefa encontrada com esse termo.')
+    else: 
+        print('--- Resultados da busca: ---')
+        for i, tarefa in enumerate(resultados, start=1):
+            status = 'Concluída' if tarefa['concluida'] else 'Pendente'
+            print(f'{i}. {tarefa["titulo"]} - Status: {status}') 
+
 
 def mostrar_detalhes():
     if not tarefas:
