@@ -48,7 +48,8 @@ class TaskManager: # Classe para gerenciar as tarefas
         
 
 #Função para mostrar os detalhes de uma tarefa 
-    def mostrar_detalhes():
+    def mostrar_detalhes(self):
+        # Verifica se há tarefas cadastradas
         if not self.tarefas:
             print('Nenhuma tarefa cadastrada.')
             return
