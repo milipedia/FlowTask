@@ -1,4 +1,4 @@
-from app.services.task_manager import TaskManager #Trazendo o arquivo correto do pacote 'app'
+from app.services.task_manager import TaskManager #Trazendo o arquivo do pacote 'app'
 
 def menu(gerenciador: TaskManager):
     # Menu principal do FlowTask
